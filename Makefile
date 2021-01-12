@@ -1,5 +1,5 @@
 # COMPILER
-CC = g++-5
+CC = g++-7
 AR = ar
 
 # TARGET NAMES
@@ -17,7 +17,7 @@ LIBMNRL = $(MNRL)/libmnrl.a
 LIBPUGI = $(PUGI)/build/make-$(CC)-release-standard-c++11/src/pugixml.cpp.o
 
 # FLAGS
-CXXFLAGS= -I$(IDIR) -I$(MNRL)/include -I$(PUGI)/src -pthread --std=c++11 -Wno-deprecated
+CXXFLAGS= -I$(IDIR) -I$(MNRL)/include -I$(PUGI)/src -pthread --std=c++17 -Wno-deprecated
 OPTS = -Ofast
 ARFLAGS = rcs
 
@@ -58,6 +58,7 @@ $(TARGET): $(SRCDIR)/$(MAIN_CPP) $(LIBVASIM) $(LIBMNRL)
 
 $(LIBVASIM): $(LIBPUGI) $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^ 
+
 
 $(ODIR)/%.o: $(SRCDIR)/%.cpp $(DEPS) $(LIBMNRL)
 	@mkdir -p $(ODIR)	
