@@ -1619,15 +1619,15 @@ void Automata::automataToNFAFile(string out_fn) {
 }
 
 /**
- * Writes automata to ANML file.
+ * Writes automata to ANML file with separate automata network names
  */
-void Automata::automataToANMLFile(string out_fn) {
+void Automata::automataToANMLFile(string out_fn, string id) {
 
     string str = "";
 
     // xml header
     str += "<anml version=\"1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n";
-    str += "<automata-network id=\"vasim\">\n";
+    str += "<automata-network id=\"" + id + "\">\n";
 
     vector< pair<string, Element *>> els;
 
@@ -1648,6 +1648,15 @@ void Automata::automataToANMLFile(string out_fn) {
 
     // write NFA to file
     writeStringToFile(str, out_fn);
+}
+
+/**
+ * Writes automata to ANML file.
+ */
+void Automata::automataToANMLFile(string out_fn) {
+
+    automataToANMLFile(out_fn, "vasim");
+    
 }
 
 /**

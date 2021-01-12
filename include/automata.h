@@ -115,6 +115,7 @@ public:
     void automataToDotFile(std::string fn);
     void automataToNFAFile(std::string fn);
     void automataToANMLFile(std::string fn);
+    void automataToANMLFile(std::string out_fn, std::string id);
     void automataToMNRLFile(std::string fn);
     void automataToHDLFile(std::string fn);
     void automataToBLIFFile(std::string fn);
