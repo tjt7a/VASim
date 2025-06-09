@@ -115,7 +115,7 @@ public:
     void automataToNFAFile(std::string fn);
     void automataToANMLFile(std::string fn);
     void automataToMNRLFile(std::string fn);
-    void automataToHLSFiles(int N, int split_factor);
+    void automataToHLSFiles(int N, int split_factor, int config_size);
     void automataToHDLFile(std::string fn);
     void automataToBLIFFile(std::string fn);
     void automataToGraphFile(std::string fn);
